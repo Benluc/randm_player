@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synth>
+<!-- author Martin Dobbermann -->
+
+
+
+	<!-- Make and Bind a SliderThumb style -->
+<style id="sliderStyle">
+
+    <state>
+   
+      <property key="Slider.paintValue" type="boolean" value="false"/>
+      <property key="Slider.thumbWidth" type="integer" value="20"/>  
+      <property key="Slider.thumbHeight" type="integer" value="23"/>
+    </state>
+
+</style>
+
+<bind style="sliderStyle" type="region" key="slider" />
+	 
+
+<style id="SliderTrackStyle">
+   
+   
+        <state>
+          <imagePainter method="sliderTrackBackground" path="images/randm_main/slider_line.png"
+         sourceInsets="0 10 0 10"/>
+            
+        </state>
+</style>
+<bind style="SliderTrackStyle" type="region" key="sliderTrack" />
+
+<style id="sliderThumbStyle">
+
+    <state>
+       <imagePainter method="sliderThumbBackground" path="images/randm_main/slider_dreieck.png"
+         sourceInsets="0 0 0 0"/>
+    </state>
+
+   <state value="PRESSED">
+       <imagePainter method="sliderThumbBackground" path="images/randm_main/slider_dreieck.png"
+         sourceInsets="0 0 0 0"/>
+   </state>
+
+</style>
+
+
+<bind style="sliderThumbStyle" type="region" key="sliderThumb" />
+
+
+    
+    
+ <style id="button">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/left_ear/rl_button_normal.png"
+                    sourceInsets="10 10 10 10"/>
+      <insets top="9" left="10" bottom="9" right="12"/>
+      <font name="Myriad Pro" size="16" style="REGULAR"/>
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/left_ear/rl_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+      <insets top="9" left="10" bottom="9" right="12"/>
+       <font name="Myriad Pro" size="16" style="REGULAR"/>
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+   </state>
+   
+   <state value="PRESSED">
+     	<imagePainter method="buttonBackground" path="images/left_ear/rl_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      <insets top="10" left="12" bottom="8" right="9"/>
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+   </state>
+   <state value="SELECTED">
+     	<imagePainter method="buttonBackground" path="images/left_ear/rl_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      <insets top="10" left="12" bottom="8" right="9"/>
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+   </state>
+   <property key="Button.margin" type="insets" value="0 0 0 0"/>
+   
+</style>
+<bind style="button" type="region" key="button"/>
+
+
+
+
+
+
+
+
+ <style id="imageLabelBg">
+   	<state value="ENABLED">
+    	<imagePainter method="ButtonBackground" path="images/randm_main/imageLabelBg.png"
+                    sourceInsets="10 10 10 10"/>
+         <insets top="10" left="12" bottom="8" right="9"/>
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+   </state>
+   <state value="MOUSE_OVER">
+    	<imagePainter method="ButtonBackground" path="images/randm_main/imageLabelBg.png"
+                    sourceInsets="10 10 10 10"/>
+         <insets top="10" left="12" bottom="8" right="9"/>
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+   </state>
+   <state value="SELECTED">
+    	<imagePainter method="ButtonBackground" path="images/randm_main/imageLabelBg.png"
+                    sourceInsets="10 10 10 10"/>
+         <insets top="10" left="12" bottom="8" right="9"/>
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+   </state>
+   <state value="PRESSED">
+    	<imagePainter method="ButtonBackground" path="images/randm_main/imageLabelBg.png"
+                    sourceInsets="10 10 10 10"/>
+         <insets top="10" left="12" bottom="8" right="9"/>
+      <color type="TEXT_FOREGROUND" value="#000000"/>
+   </state>
+   <property key="Button.margin" type="insets" value="0 0 0 0"/>
+      
+
+  
+  
+</style>
+<bind style="imageLabelBg" type="name" key="ImageLabelBg"/>
+
+<style id="delete_button">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/left_ear/delete_button_normal.png" 
+                    sourceInsets="10 10 10 10"/>
+     
+      
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/left_ear/delete_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+     
+   </state>
+   
+   <state value="PRESSED">
+     <imagePainter method="buttonBackground" path="images/left_ear/delete_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+  
+   
+</style>
+<bind style="delete_button" type="name" key="delete_rl_"/>
+<bind style="delete_button" type="name" key="delete_rs_"/>
+   
+
+
+<!--
+<bind style="button" type="name" key="mini"/>
+
+-->
+
+
+
+	
+<style id="textfield">
+   <opaque value="false"/>
+   <state>
+      <font name="Arial" size="12"/>
+     <color value="#FFFFFF" type="BACKGROUND"/> 
+      <color value="#000000" type="TEXT_FOREGROUND"/>
+   </state>
+   <imagePainter method="textfieldBackground" path="images/left_ear/rl_input.png"
+      sourceInsets="4 6 4 6" paintCenter="false"/>
+   <insets top="4" left="6" bottom="4" right="6"/>
+    
+</style>
+<bind style="textfield" type="region" key="TextField"/>
+
+<style id="sendButton">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/left_ear/einfuege_button_normal.png"
+                    sourceInsets="10 10 10 10"/>
+      <insets top="9" left="10" bottom="9" right="12"/>
+      <font name="Arial" size="16" style="BOLD"/>
+      <color type="TEXT_FOREGROUND" value="#FFFFFF"/>
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/left_ear/einfuege_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+      <insets top="9" left="10" bottom="9" right="12"/>
+       <font name="Arial" size="8" style="BOLD"/>
+      <color type="TEXT_FOREGROUND" value="#FFFFFF"/>
+   </state>
+   
+   <state value="PRESSED">
+       <imagePainter method="buttonBackground" path="images/left_ear/einfuege_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      <insets top="10" left="12" bottom="8" right="9"/>
+      <color type="TEXT_FOREGROUND" value="#33BB11"/>
+   </state>
+   <property key="Button.margin" type="insets" value="0 0 0 0"/>
+   
+</style>
+<bind style="sendButton" type="name" key="sendRl"/>
+<bind style="sendButton" type="name" key="sendRs"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="mini">
+   <opaque value="true"/>
+   <state>
+      <font name="Aharoni" size="14"/>
+      <color value="#D2DFF2" type="BACKGROUND"/>
+      <color value="#000000" type="TEXT_FOREGROUND"/>
+   </state>
+   <imagePainter method="textFieldBorder" path="images/randm_main.png"
+      sourceInsets="4 6 4 6" paintCenter="false"/>
+   <insets top="4" left="6" bottom="4" right="6"/>
+</style>
+<bind style="mini" type="region" key="mini"/>
+
+
+
+
+
+
+
+<style id="exit_button">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/randm_main/exit.png" 
+                    sourceInsets="10 10 10 10"/>
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/randm_main/exit_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+     
+   </state>
+   
+   <state value="PRESSED">
+     <imagePainter method="buttonBackground" path="images/randm_main/exit_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+  
+   
+</style>
+<bind style="exit_button" type="name" key="exit_button"/>
+
+
+
+
+
+
+
+<style id="minim_button">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/randm_main/minimi.png" 
+                    sourceInsets="10 10 10 10"/>
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/randm_main/minimi_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+     
+   </state>
+   
+   <state value="PRESSED">
+     <imagePainter method="buttonBackground" path="images/randm_main/minimi_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+  
+   
+</style>
+<bind style="minim_button" type="name" key="minim_button"/>
+
+
+
+<style id="maximize_button">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/randm_main/maximi.png" 
+                    sourceInsets="10 10 10 10"/>
+   </state> 
+   <state value="MOUSE_OVER">
+    	<imagePainter method="buttonBackground" path="images/randm_main/maximi.png" 
+                    sourceInsets="10 10 10 10"/>
+   </state> 
+   <state value="PRESSED">
+    	<imagePainter method="buttonBackground" path="images/randm_main/maximi.png" 
+                    sourceInsets="10 10 10 10"/>
+   </state> 
+</style>
+<bind style="maximize_button" type="name" key="maximize_button"/>
+
+
+
+
+
+<!-- wird derzeit nicht mehr benötigt	
+<style id="logout_button">
+
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/randm_main/logout_button.png" 
+                    sourceInsets="10 10 10 10" />
+                   
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/randm_main/logout_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+     
+   </state>
+   
+   <state value="PRESSED">
+     <imagePainter method="buttonBackground" path="images/randm_main/logout_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+  
+   
+</style>
+<bind style="logout_button" type="name" key="logout_button"/>
+-->
+
+
+
+
+
+
+<style id="left_button">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/randm_main/left_open_button.png" 
+                    sourceInsets="10 10 10 10"/>
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/randm_main/left_open_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+     
+   </state>
+   
+   <state value="PRESSED">
+     <imagePainter method="buttonBackground" path="images/randm_main/left_open_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+  
+   
+</style>
+<bind style="left_button" type="name" key="left_button"/>
+
+
+
+<style id="right_button">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/randm_main/right_open_button.png" 
+                    sourceInsets="10 10 10 10"/>
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/randm_main/right_open_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+     
+   </state>
+   
+   <state value="PRESSED">
+     <imagePainter method="buttonBackground" path="images/randm_main/right_open_button_pressed.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+  
+   
+</style>
+<bind style="right_button" type="name" key="right_button"/>
+
+<style id="Combo Box">
+  		<insets  left="10" />
+  		<property key="ComboBox.showPopupOnNavigation" type="boolean" value="true"/>
+  		<property key="ComboBox.rendererUseListColors" type="boolean" value="false"/>
+  		
+  		<state value="ENABLED">
+  			<imagePainter method="comboBoxBackground" path="images/left_ear/rl_input.png" sourceInsets="10 10 10 10" paintCenter="true"  center="false"/>
+  		</state>
+  		<state value="MOUSE_OVER">
+  			<imagePainter method="comboBoxBackground" path="images/left_ear/delete_button_hover.png" sourceInsets="2 2 2 2" paintCenter="true" stretch="true" center="false"/>
+  		</state>
+  		<state value="PRESSED">
+  			<imagePainter method="comboBoxBackground" path="images/left_ear/delete_button_pressed.png" sourceInsets="2 2 2 2" paintCenter="true" stretch="true" center="false"/>
+  		</state>
+  		<state value="DISABLED">
+  			<imagePainter method="comboBoxBackground" path="images/left_ear/rl_input.png" sourceInsets="2 2 2 2" paintCenter="true" stretch="true" center="false"/>
+  		</state>
+  	</style>
+  	<bind style="Combo Box" type="region" key="ComboBox" />
+  	
+<!-- The style for the list renderer of JComboBox -->
+	<style id="ComboBox List Renderer">
+		<insets top="3" left="3" bottom="3" right="3"/>
+		<opaque value="true"/>
+		<state value="ENABLED">
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+		</state>
+		<state value="MOUSE_OVER">
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+		</state>
+		<state value="DISABLED">
+			<color type="TEXT_FOREGROUND" value="#999999"/>
+		</state>
+		<state value="SELECTED">
+			<color type="TEXT_FOREGROUND" value="#CC6600"/>
+			<color type="TEXT_BACKGROUND" value="#FFEEDD"/>
+		</state>
+	</style>
+	<bind style="ComboBox List Renderer" type="name" key="ComboBox.listRenderer" />
+	
+	<!-- The style for the list renderer of JComboBox -->
+	<style id="ComboBox Arrow Button">
+		<insets top="3" left="3" bottom="3" right="3"/>
+		
+		<state value="ENABLED">
+  			<imagePainter method="arrowButtonForeground" path="images/right_ear/arrow_down.png" sourceInsets="10 10 10 10" paintCenter="true"  center="false"/>
+  		</state>
+  		<state value="MOUSE_OVER">
+  			<imagePainter method="arrowButtonForeground" path="images/right_ear/arrow_down_hover.png" sourceInsets="10 10 10 10" paintCenter="true"  center="false"/>
+  		</state>
+  		<state value="PRESSED">
+  			<imagePainter method="arrowButtonForeground" path="images/right_ear/arrow_down_pressed.png" sourceInsets="10 10 10 10" paintCenter="true"  center="false"/>
+  		</state>
+		<state value="FOCUSED">
+  			<imagePainter method="arrowButtonForeground" path="images/right_ear/arrow_down_pressed.png" sourceInsets="10 10 10 10" paintCenter="true"  center="false"/>
+  		</state>
+	</style>
+	<bind style="ComboBox Arrow Button" type="name" key="ComboBox.arrowButton" />
+	
+	
+
+	<!-- The style for the list of JComboBox -->
+	<style id="ComboBox List">
+		<insets top="3" left="3" bottom="3" right="3"/>
+		<opaque value="true"/>
+		<state value="ENABLED">
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+		</state>
+		<state value="DISABLED">
+			<color type="TEXT_FOREGROUND" value="#999999"/>
+		</state>
+		<state value="SELECTED">
+			<color type="TEXT_FOREGROUND" value="#CC6600"/>
+			<color type="TEXT_BACKGROUND" value="#FFEEDD"/>
+		</state>
+	</style>
+	<bind style="ComboBox List" type="name" key="ComboBox.list" />
+	
+	
+	<style id="play_button">
+   	<state value="ENABLED">
+    	<imagePainter method="ButtonBackground" path="images/randm_main/play_button.png" 
+                    sourceInsets="10 10 10 10"/>
+     
+      
+   </state>
+   
+   <state value="MOUSE_OVER">
+			<imagePainter method="ButtonBackground" path="images/randm_main/play_button_hover.png" sourceInsets="10 10 10 10" paintCenter="true" stretch="true" center="false"/>
+			
+		</state>
+		<state value="PRESSED">
+			<imagePainter method="ButtonBackground" path="images/randm_main/play_button_hover.png" sourceInsets="10 10 10 10" paintCenter="true" stretch="true" center="false"/>
+		</state>
+		
+		
+  
+   
+</style>
+<bind style="play_button" type="name" key="play"/>
+
+<style id="stop_button">
+   	<state value="ENABLED">
+    	<imagePainter method="ButtonBackground" path="images/randm_main/stop_button.png" 
+                    sourceInsets="10 10 10 10"/>
+     
+      
+   </state>
+   
+   <state value="MOUSE_OVER">
+			<imagePainter method="ButtonBackground" path="images/randm_main/stop_button_hover.png" sourceInsets="10 10 10 10" paintCenter="true" stretch="true" center="false"/>
+			
+		</state>
+		<state value="PRESSED">
+			<imagePainter method="ButtonBackground" path="images/randm_main/stop_button_hover.png" sourceInsets="10 10 10 10" paintCenter="true" stretch="true" center="false"/>
+		</state>
+		
+		
+  
+   
+</style>
+<bind style="stop_button" type="name" key="stop"/>
+
+
+
+<style id="next_button">
+   	<state value="ENABLED">
+    	<imagePainter method="buttonBackground" path="images/randm_main/next_button.png" 
+                    sourceInsets="10 10 10 10"/>
+     
+      
+   </state>
+   
+   <state value="MOUSE_OVER">
+      <imagePainter method="buttonBackground" path="images/randm_main/next_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+     
+   </state>
+   
+   <state value="PRESSED">
+     <imagePainter method="buttonBackground" path="images/randm_main/next_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+   <state value="SELECTED">
+     <imagePainter method="buttonBackground" path="images/randm_main/next_button_hover.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+   <state value="DISABLED">
+     <imagePainter method="buttonBackground" path="images/randm_main/next_button_deselected.png"
+                    sourceInsets="10 10 10 10"/>
+      
+   </state>
+  
+   
+</style>
+<bind style="next_button" type="name" key="next"/>
+
+
+</synth>
+
+
